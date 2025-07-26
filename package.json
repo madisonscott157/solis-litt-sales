@@ -1,0 +1,42 @@
+{
+  "name": "repole-sales-app",
+  "version": "1.0.0",
+  "description": "Sales shortlist application with persistent file storage",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static files ready'",
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "sales",
+    "shortlist",
+    "excel",
+    "file-upload",
+    "vercel",
+    "redis"
+  ],
+  "author": "Madison Scott",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/blob": "^0.15.1",
+    "@vercel/kv": "^1.0.1",
+    "multiparty": "^4.2.3"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/repole-sales-shortlist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/repole-sales-shortlist/issues"
+  },
+  "homepage": "https://github.com/your-username/repole-sales-shortlist#readme"
+}
