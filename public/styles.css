@@ -1,1 +1,348 @@
+/* Persistent File Storage Styles for Sales Shortlist Application */
 
+/* File Upload Drop Zone */
+.persistent-drop-zone {
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.persistent-drop-zone:hover {
+    border-color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.persistent-drop-zone.dragover {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-style: solid;
+}
+
+.persistent-drop-zone i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.persistent-drop-zone h5 {
+    color: #495057;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.persistent-drop-zone p {
+    color: #6c757d;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* File Upload Section */
+.persistent-file-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.persistent-file-section .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* File List Styles */
+.persistent-files-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.file-item {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef !important;
+    transition: all 0.3s ease;
+}
+
+.file-item:hover {
+    border-color: #007bff !important;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+    transform: translateY(-1px);
+}
+
+.file-info h6 {
+    color: #495057;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.file-info small {
+    font-size: 0.8rem;
+}
+
+.file-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.file-actions .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.file-actions .btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Hidden file input */
+.persistent-file-input {
+    display: none;
+}
+
+/* Upload button styles */
+.persistent-upload-btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.persistent-upload-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.persistent-upload-btn:disabled {
+    background: #6c757d;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Refresh button */
+.persistent-refresh-btn {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.persistent-refresh-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* File count badge */
+.file-count-badge {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Loading states */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    color: #007bff;
+    font-size: 2rem;
+}
+
+/* Empty state */
+.empty-state {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .persistent-drop-zone {
+        padding: 30px 15px;
+        margin: 15px 0;
+    }
+    
+    .persistent-drop-zone h5 {
+        font-size: 1.1rem;
+    }
+    
+    .persistent-drop-zone p {
+        font-size: 0.8rem;
+    }
+    
+    .file-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+    
+    .file-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .file-actions .btn {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .persistent-files-list {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .persistent-drop-zone {
+        padding: 20px 10px;
+    }
+    
+    .persistent-drop-zone i {
+        font-size: 2rem;
+    }
+    
+    .persistent-drop-zone h5 {
+        font-size: 1rem;
+    }
+    
+    .file-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Animation for file list updates */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.file-item {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Success/Error message styles */
+.persistent-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* File type icons */
+.file-icon-excel {
+    color: #10793f;
+}
+
+.file-icon-csv {
+    color: #0066cc;
+}
+
+/* Custom scrollbar for file list */
+.persistent-files-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.persistent-files-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.persistent-files-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.persistent-files-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Ensure proper spacing in existing layout */
+.persistent-file-section {
+    margin-top: 20px;
+}
+
+/* Integration with existing Bootstrap theme */
+.persistent-file-section .card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.375rem;
+}
+
+.persistent-file-section .card-header {
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .persistent-drop-zone {
+        background-color: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .persistent-drop-zone:hover {
+        background-color: rgba(66, 153, 225, 0.1);
+    }
+    
+    .file-item {
+        background-color: #2d3748;
+        border-color: #4a5568 !important;
+        color: #e2e8f0;
+    }
+}
+
+/* Accessibility improvements */
+.persistent-drop-zone:focus,
+.persistent-upload-btn:focus,
+.file-actions .btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .persistent-drop-zone {
+        border-width: 3px;
+    }
+    
+    .file-item {
+        border-width: 2px !important;
+    }
+}
